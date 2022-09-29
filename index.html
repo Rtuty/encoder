@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="script" href="script.js"/>
+    <title>Encrypter Online</title>
+</head>
+<body>
+    <form name="encform" onsubmit="return false;">
+        <p>
+            <textarea name="box1" rows="5" cols="80">Текст для проверки возможности шифрования</textarea>
+        </p>
+        <p>
+            <input type="button" value="Зашифровать" onClick="this.form.box2.value=Encrypt(this.form.box1.value);">
+        </p>
+        <p>
+            <textarea name="box2" rows="5" cols="80"></textarea>
+        </p>
+        <p>
+            <input type="button" value="Расшифровать" onClick="this.form.box3.value=unEncrypt(this.form.box2.value);">
+        </p>
+        <p>
+            <textarea name="box3" rows="5" cols="80"></textarea>
+        </p>
+        </form>
+</body>
+</html>
