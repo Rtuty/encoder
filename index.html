@@ -19,41 +19,38 @@
 
         <label for="exampleFormControlTextarea1"
                class="form-label">
-               Текст для зашифровки
-        </label>
+               Исходные данные</label>
         <textarea name="box1"
                   class="form-control"
                   id="exampleFormControlTextarea1"
-                  rows="3">
-        </textarea>
+                  placeholder="Введите текст для зашифровки..."
+                  rows="3"></textarea>
 
             <p>
-                <button class="btn btn-primary" onClick="this.form.box2.value=Encrypt(this.form.box1.value);">Зашифровать Box1 в Box2</button>
+                <button class="btn btn-primary" onClick="this.form.box2.value=Encrypt(this.form.box1.value);">Зашифровать</button>
             </p>
 
         <label for="exampleFormControlTextarea2"
                class="form-label">
-               Зашифрованный текст
-        </label>
+               Зашифрованный текст</label>
         <textarea name="box2"
                   class="form-control"
                   id="exampleFormControlTextarea2"
-                  rows="3">
-        </textarea>
+                  rows="3"
+                  placeholder="Данные после шифрации"></textarea>
 
             <p>
-                <button class="btn btn-primary" onClick="this.form.box3.value=unEncrypt(this.form.box2.value);">Расшифровать Box2 в Box3</button>
+                <button type="button" class="btn btn-primary" onClick="this.form.box3.value=unEncrypt(this.form.box2.value);">Расшифровать</button>
             </p>
 
         <label for="exampleFormControlTextarea3"
                class="form-label">
-            Расшифрованный текст
-        </label>
+            Ответ от дешифратора:</label>
         <textarea name="box3"
                   class="form-control"
                   id="exampleFormControlTextarea3"
-                  rows="3">
-        </textarea>
+                  rows="3"
+                  placeholder="Результат расшифровки"></textarea>
 
     </div>
 </form>

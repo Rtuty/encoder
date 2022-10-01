@@ -2,6 +2,15 @@ textarea {
     max-width: 50%;
 }
 
-btn.btn-primary {
-    max-width: 50%;
+textarea.form-control {
+    max-width: 20%;
+}
+
+.main {
+    display: grid;
+    place-items: center;
+}
+
+body {
+    background-color: #13d9eb;
 }
