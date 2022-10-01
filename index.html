@@ -5,25 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="script" href="script.js"/>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+          crossorigin="anonymous"
+    />
     <title>Encrypter Online</title>
 </head>
 <body>
-    <form name="encform" onsubmit="return false;">
+<form name="encform" onsubmit="return false;">
+    <div class="main">
         <p>
             <textarea name="box1" rows="5" cols="80">Текст для проверки возможности шифрования</textarea>
         </p>
         <p>
-            <input type="button" value="Зашифровать" onClick="this.form.box2.value=Encrypt(this.form.box1.value);">
+<!--          <input type="button" value="Зашифровать Box1 в Box2" id="btnCrypt"onClick="this.form.box2.value=Encrypt(this.form.box1.value);">-->
+            <button class="btn btn-primary" onClick="this.form.box2.value=Encrypt(this.form.box1.value);">Зашифровать Box1 в Box2</button>
         </p>
         <p>
             <textarea name="box2" rows="5" cols="80"></textarea>
         </p>
         <p>
-            <input type="button" value="Расшифровать" onClick="this.form.box3.value=unEncrypt(this.form.box2.value);">
+            <input type="button" value="Расшифровать Box2 в Box3" onClick="this.form.box3.value=unEncrypt(this.form.box2.value);">
         </p>
         <p>
             <textarea name="box3" rows="5" cols="80"></textarea>
         </p>
-        </form>
+    </div>
+</form>
+    <script>
+        function Encrypt(theText) {
+            output = new String;
+            Temp = new Array();
+            Temp2 = new Array();
+            TextSize = theText.length;
+            for (i = 0; i < TextSize; i++) {
+                rnd = Math.round(Math.random() * 122) + 68;
+                Temp[i] = theText.charCodeAt(i) + rnd;
+                Temp2[i] = rnd;
+            }
+            for (i = 0; i < TextSize; i++) {
+                output += String.fromCharCode(Temp[i], Temp2[i]);
+            }
+            return output;
+        }
+        function unEncrypt(theText) {
+            output = new String;
+            Temp = new Array();
+            Temp2 = new Array();
+            TextSize = theText.length;
+            for (i = 0; i < TextSize; i++) {
+                Temp[i] = theText.charCodeAt(i);
+                Temp2[i] = theText.charCodeAt(i + 1);
+            }
+            for (i = 0; i < TextSize; i = i+2) {
+                output += String.fromCharCode(Temp[i] - Temp2[i]);
+            }
+            return output;
+        }
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 </body>
 </html>

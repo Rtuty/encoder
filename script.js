@@ -28,3 +28,5 @@ for (i = 0; i < TextSize; i = i+2) {
 }
 return output;
 }
+
+document.getElementById('btnCrypt').onclick = Encrypt()
