@@ -11,6 +11,12 @@ textarea.form-control {
     place-items: center;
 }
 
+/* do not worked */
 body {
-    background-color: #13d9eb;
+    background-color: #13d9eb !important;
+}
+
+p {
+    margin-top: 1% !important;
+    /*margin-bottom: 5% !important; */
 }
