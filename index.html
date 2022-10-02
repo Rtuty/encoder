@@ -87,63 +87,36 @@
             return output;
         }
 
-
-
-
-
-
-
-
-
-
-        function VernamCrypt(theText)
+        function VernamCrypt()
         {
             // генератор случайных чисел в заданном диапазоне
             function getRandomInt(min, max) {
                 return Math.floor(Math.random() * (max - min)) + min;
             }
-
-            // переменные для исходного сообщения, зашифрованного и ключа шифрования
             var input, output, key;
-
-            // служебные переменные для шифра
             var inp, k;
-
-            // запрашиваем текст, который будем шифровать
             input = prompt("Введите исходный текст");
 
-            // запрашиваем ключ шифрования
             key = prompt("Введите ключ");
 
             // если длина ключа меньше длины сообщения — говорим пользователю и генерируем свой ключ
-            if ((key.length) < (input.length)) {
-
+            if ((key.length) < (input.length)) {\
                 alert("Ключ короче сообщения, это небезопасно. Скопируйте новый сгенерированный ключ из консоли браузера.");
-
-                // в самом начале ключ будет пустой
                 key = "";
                 // генерируем новый ключ такой же длины, как и сообщение
                 for (var i = 0; i < input.length; i++) {
                     key += String.fromCharCode(getRandomInt(0, 66535));
                 }
-
-                // выводим новый ключ шифрования
                 console.log("Скопируйте новый ключ ↓");
                 console.log(key);
-
             }
 
             // чтобы расшифровать сообщение ়Ύࢻ‥῱ᶗ႗අӯ࿓Аᵞ࿑႓ഇ఑࿖᛫⒆ชↄ଼ᕥ -сообщение, ඣߎಃ␗ᯄ᧕Ⴛඥ¢஑.ᵾ௧ᓐेࠬ௦ዐ⒦ਐ►༈ᕄ - код
             // шифруем сообщение
             output = "";
             for (i = 0; i < input.length; i++) {
-
-
-                // берём цифровое значение очередного символа в сообщении и ключе
-
                 inp = input.charCodeAt(i);
                 k = key.charCodeAt(i);
-                // и применяем к ним исключающее или — XOR
                 output += String.fromCharCode(inp ^ k);
             }
             return output;
