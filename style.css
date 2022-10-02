@@ -1,5 +1,5 @@
 textarea {
-    max-width: 50%;
+    max-width: 25%;
 }
 
 textarea.form-control {
@@ -11,12 +11,21 @@ textarea.form-control {
     place-items: center;
 }
 
-/* do not worked */
+/* do not worked background-color: #13d9eb !important; */
 body {
-    background-color: #13d9eb !important;
+    background-image: url("cryptoground.png") !important;
 }
 
 p {
     margin-top: 1% !important;
     /*margin-bottom: 5% !important; */
+}
+
+label {
+    /* margin-top: 5%; */
+    color: white;
+}
+
+.main {
+    margin-top: 10% !important;
 }
